@@ -1,0 +1,44 @@
+{#{% extends 'home.html' %} {% block result %}#}
+<p>Result</p>
+<div class="row">
+    <div class="view-result">
+        {#        {% for source_item in preds %}#}
+        {#            <p>{{ source_item }}</p>#}
+        {#        {% endfor %}#}
+
+        <div class="card" style="width: 50rem;">
+            <div class="row">
+                <img class="card-img-top col-6" src="{{ preds.source }}" alt="Input-image">
+                <img class="card-img-top col-6" src="{{ preds.detected }}" alt="detected-image">
+            </div>
+            <div class="card-body">
+                {#                <img id="source_image" src="{{ preds.source }}"/>#}
+                {#                <p>zebra {{ preds['zcount'] }}</p>#}
+                <span class="badge badge-primary">Zebra</span>
+                <p class="card-text">{{ preds['zcount'] }}</p>
+                <span class="badge badge-secondary">Wildebeest </span>
+                <p class="card-text">{{ preds['wcount'] }}</p>
+                <span class="badge badge-secondary">Gazelle </span>
+                <p class="card-text">{{ preds['gcount'] }}</p>
+
+            </div>
+        </div>
+        {#            {% for source_item in preds %}#}
+        {#                <img src="{{ source_item }}"/>#}
+        <br><br><br><br>
+        <div class="row">
+            {% for cropped_item in preds.prediction %}
+                <div class="predict-card card col-6" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 200px" id="source-image"
+                         src="{{ cropped_item['img_src'] }}" alt="Source Image">
+                    <div class="card-header" id="source-caption">{{ cropped_item['label'] }}</div>
+                    <div class="card-body">
+                        <p class="card-text"> {{ cropped_item['behaviour'] }} .</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {#            {% endfor %}#}
+    </div>
+</div>
+{#{% endblock %}#}

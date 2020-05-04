@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="input-group">
+                <!--Input Path of directory-->
+                {#                <div class="input-group input-group-lg">#}
+                {#                    <div class="input-group-prepend">#}
+                {#                        <span class="input-group-text" id="inputGroup-sizing-lg">Path</span>#}
+                {#                    </div>#}
+                {#                    <input type="text" id='folder-path' class="form-control" aria-label="Large"#}
+                {#                           aria-describedby="inputGroup-sizing-sm">#}
+                {#                    <div class="input-group-append">#}
+                {#                        <button class="btn btn-outline-secondary" type="button">Submit</button>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#                <div class="custom-file">#}
+                {#                    <input type="file" class="custom-file-input" id="inputGroupFile01"#}
+                {#                           aria-describedby="inputGroupFileAddon01">#}
+                {#                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>#}
+                {#                </div>#}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="image-loader">
+                <div class="input-image">
+                    <input id="img-upload" class="hidden" type="file" accept="image/x-png,image/jpeg"/>
+                    <label for="img-upload" id="image-drag" class="image-upload-box">
+                        <div id="upload-caption">Insert Images here or click to select</div>
+                        <img id="preview" class="hidden"/>
+                        <label id="prefilename" value="none" class="hidden"></label>
+                    </label>
+                    {#                </div>#}
+                    {#                <div>#}
+                    <button class="btn btn-danger" type="button" onclick="del()">Clear</button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="submit()">
+                        <div id="loading_id" style="display: none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </div>
+                        <div id="submit_id">Submit</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="res">
+
+        </div>
+        {#        {% block result %} {% endblock %}#}
+    </div>
+{% endblock %}

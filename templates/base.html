@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Detection</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}"/>
+    <script src="{{ url_for('static', filename='js/jquery-3.5.0.min.js') }}"></script>
+
+</head>
+<body>
+<header class="header-bar">
+    <div class="container clearfix text-center">
+        <h1 class="header-title">
+            Camera Trap Data Extractor
+        </h1>
+    </div>
+</header>
+{% block content %}{% endblock %}
+{#<div id="res">#}
+{#    <p>result</p>#}
+{#</div>#}
+{#{% block result %} {% endblock %}#}
+{#<div id="resut"></div>#}
+</body>
+<footer>
+    <!--Bootstrap CSS-->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var url = 'http://127.0.0.1:5002/GUI-is-still-open';
+    {#var url = 'http://192.168.1.4:5001/GUI-is-still-open';#}
+    fetch(url, { mode: 'no-cors'});
+    setInterval(function(){
+        fetch(url, { mode: 'no-cors'});
+        }, 5000)();}
+);
+
+</script>
+</footer>
+</html>
